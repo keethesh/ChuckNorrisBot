@@ -5,7 +5,6 @@ from discord.ext.commands import Context
 from lxml import html
 
 client = commands.Bot(command_prefix="!")
-fact_cache = {"expires": 0, "facts": []}
 
 
 @client.event
