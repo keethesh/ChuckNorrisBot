@@ -3,6 +3,8 @@ from discord import Embed
 from discord.ext import commands
 from discord.ext.commands import Context
 from lxml import html
+from dotenv import load_dotenv
+import os
 
 client = commands.Bot(command_prefix="!")
 
@@ -28,9 +30,5 @@ async def chuck(ctx: Context):
     embed = Embed(title="Chuck Fact", description=fact, color=0x0440B9)
     await ctx.send(embed=embed)
 
-
-if __name__ == "__main__":
-    import config
-
-    token = config.bot_token
-    client.run(token)
+load_dotenv()
+client.run(os.getenv('BOT_TOKEN'))
